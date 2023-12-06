@@ -1,0 +1,175 @@
+#menu {
+  position: relative;
+  width: 100%;
+  top: 0;
+  padding: 0 10%;
+  background: $color2;
+  transition: 1s;
+  z-index: 4;
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    // Menu page normeale
+    .logo {
+      width: 70px;
+      padding: 5px;
+
+      img {
+        width: 100%;
+      }
+    }
+    ul {
+      vertical-align: middle;
+      transition: 1s;
+      @media screen and (max-width: 610px) {
+        display: none;
+      }
+      li {
+        display: inline-block;
+        list-style: none;
+        margin: 10px 15px;
+
+        .highlight {
+          position: relative;
+          color: $color1;
+          text-decoration: none;
+          padding: 10px 5px;
+          font-size: 1.5rem;
+          transition: 1s;
+          
+          &::after {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 3px;
+            background-color: $color1;
+            border-radius: 10px;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: 1s trait forwards;
+          }
+          @keyframes trait {
+            0%{
+              width: 0;
+            }
+            100%{
+              width: 50px;
+            }
+          }
+        }
+
+        a {
+          position: relative;
+          text-decoration: none;
+          padding: 10px 15px;
+          font-size: 1.5rem;
+          color: $color4;
+          // transition: 2s;
+          &:hover {
+            color: $color1;
+            text-decoration: none;
+            &::after {
+              position: absolute;
+              content: "";
+              width: 0;
+              height: 3px;
+              background-color: $color1;
+              border-radius: 10px;
+              top: 40px;
+              left: 50%;
+              transform: translateX(-50%);
+              animation: 1s trait forwards;
+            }
+          }
+          @keyframes trait {
+            0%{
+              width: 0;
+            }
+            100%{
+              width: 50px;
+            }
+          }
+        }
+      }
+    }
+    
+    
+    #mobilemenu {
+      display: none;
+      transition: 1s;
+      li {
+        display: block;
+        list-style: none;
+        margin: 10px 5px;
+
+        .highlight {
+          position: relative;
+          color: $color1;
+          text-decoration: none;
+          padding: 10px 5px;
+          font-size: 1.5rem;
+          transition: 1s;
+          &::after {
+            position: absolute;
+            content: "";
+            width: 50px;
+            height: 3px;
+            background-color: $color1;
+            border-radius: 10px;
+            top: 30px;
+            left: 5px;
+            animation: 1s trait forwards;
+          }
+          @keyframes trait {
+            0%{
+              width: 0;
+            }
+            100%{
+              width: 50px;
+            }
+          }
+        }
+
+        a {
+          position: relative;
+          text-decoration: none;
+          padding: 10px 5px;
+          font-size: 1.5rem;
+          color: $color4;
+          transition: 1s;
+          &:hover {
+            text-decoration: none;
+            color: $color1;
+            &::after {
+              position: absolute;
+              content: "";
+              width: 50px;
+              height: 3px;
+              background-color: $color1;
+              border-radius: 10px;
+              top: 30px;
+              left: 5px;
+            }
+          }
+        }
+      }
+      @media screen and (max-width: 610px) {
+        display: block;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+  }
+}

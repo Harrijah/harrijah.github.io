@@ -1,0 +1,256 @@
+.aboutus {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10%;
+  background: linear-gradient(#ffecd630, #ffecd630), url("../../images/pexels.jpg") center/cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  overflow: hidden;
+  height: 350px;
+  margin: 0;
+  .titre{
+    width: 50%;
+    p{
+      // font-family: Butterfly-kids;
+      font-size: 7rem;
+      font-weight: 800; 
+      line-height: 70px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      @media screen and (max-width: 1000px) {
+        font-size: 5rem;
+      }
+      @media screen and (max-width: 640px) {
+        width: 100%;
+        font-size: 3rem;
+      }
+    }
+  }
+  .vide{
+    width: 50%;
+  }
+}
+.textintro {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 5% 0;
+  background: $color1;
+  .textcontainer {
+    position: relative;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    h1 {
+      @include lescss;
+      @media screen and (max-width: 640px) {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+#svgContainer {
+  width: 100%;
+  overflow: hidden;
+  transition: 1s;
+  #svgPath1,
+  #svgPath2,
+  #svgPath3,
+  #svgPath4,
+  #svgPath5 {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: var(--svgpathheighgt);
+    transition: 1s;
+    z-index: 1;
+  }
+}
+
+.mamservices {
+  position: relative;
+  background: $color1;
+  padding-top: 1200px;
+  width: 100%;
+  // overflow: hidden;
+  padding: 0 10%;
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: 50% 50%;
+  grid-template-areas:
+    "p1 t1"
+    "t2 p2"
+    "p3 t3"
+    "t4 p4"
+    "p5 t5"
+    "t6 p6";
+    @media screen and (max-width : 700px){
+      grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+      grid-template-columns: 100%;
+      grid-template-areas:
+        "p1"
+        "t1"
+        "p2"
+        "t2"
+        "p3"
+        "t3"
+        "p4"
+        "t4"
+        "p5"
+        "t5"
+        "p6"
+        "t6";
+    }
+  .photo1 {
+    position: relative;
+    place-self: center;
+    z-index: 1;
+    grid-area: p1;
+    img {
+      @include imageaboutus;
+      border-radius: var(--defaultpath);
+    }
+  }
+  .text1 {
+    grid-area: t1;
+    z-index: 2;
+    @include textaboutus;
+    h2 {
+      @include lescss;
+      @media screen and (max-width : 1000px){
+        font-size: 3rem;
+      }
+      @media screen and (max-width : 700px){
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .text2 {
+    grid-area: t2;
+    z-index: 3;
+    @include textaboutus;
+    h2 {
+      @include lescss;
+      @media screen and (max-width : 1000px){
+        font-size: 3rem;
+      }
+      @media screen and (max-width : 700px){
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .photo2 {
+    position: relative;
+    place-self: center;
+    grid-area: p2;
+    z-index: 2;
+    img {
+      @include imageaboutus;
+      border-radius: var(--defaultpath);
+    }
+  }
+  .photo3 {
+    position: relative;
+    place-self: center;
+    grid-area: p3;
+    z-index: 2;
+    img {
+      @include imageaboutus;
+      border-radius: var(--defaultpath);
+    }
+  }
+  .text3 {
+    grid-area: t3;
+    z-index: 2;
+    @include textaboutus;
+    h2 {
+      @include lescss;
+      @media screen and (max-width : 1000px){
+        font-size: 3rem;
+      }
+      @media screen and (max-width : 700px){
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .text4 {
+    grid-area: t4;
+    z-index: 3;
+    @include textaboutus;
+    h2 {
+      @include lescss;
+      @media screen and (max-width : 1000px){
+        font-size: 3rem;
+      }
+      @media screen and (max-width : 700px){
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .photo4 {
+    position: relative;
+    place-self: center;
+    grid-area: p4;
+    z-index: 2;
+    img {
+      @include imageaboutus;
+      border-radius: var(--defaultpath);
+    }
+  }
+  .photo5 {
+    position: relative;
+    place-self: center;
+    grid-area: p5;
+    z-index: 2;
+    img {
+      @include imageaboutus;
+      border-radius: var(--defaultpath);
+    }
+  }
+  .text5 {
+    grid-area: t5;
+    z-index: 2;
+    @include textaboutus;
+    h2 {
+      @include lescss;
+      @media screen and (max-width : 1000px){
+        font-size: 3rem;
+      }
+      @media screen and (max-width : 700px){
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .text6 {
+    grid-area: t6;
+    z-index: 2;
+    @include textaboutus;
+    h2 {
+      @include lescss;
+      @media screen and (max-width : 1000px){
+        font-size: 3rem;
+      }
+      @media screen and (max-width : 700px){
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .photo6 {
+    position: relative;
+    place-self: center;
+    grid-area: p6;
+    z-index: 1;
+    img {
+      @include imageaboutus;
+      border-radius: var(--defaultpath);
+    }
+  }
+}

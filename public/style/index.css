@@ -1,0 +1,2272 @@
+/* ************** Variables ********** */
+:root {
+  --defaultpath: 10px;
+  --defaultscale: 0;
+  --defaultopacity: 0;
+  --svgpathheighgt: 100vh;
+}
+
+@font-face {
+  font-family: Delius Swash Caps;
+  src: url("../../font/DeliusSwashCaps-Regular.ttf");
+}
+@font-face {
+  font-family: Butterfly-kids;
+  src: url("../../font/ButterflyKids-Regular.ttf");
+}
+@font-face {
+  font-family: dandelion;
+  src: url("../../font/Dandelion.otf");
+}
+@font-face {
+  font-family: mali;
+  src: url("../../font/Mali-Regular.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Delius Swash Caps;
+  color: #664825;
+}
+*::-moz-selection {
+  background-color: #664825;
+  color: #ffecd6;
+}
+*::selection {
+  background-color: #664825;
+  color: #ffecd6;
+}
+
+h2 {
+  position: relative;
+  font-family: mali;
+  font-size: 4rem;
+}
+
+.carousel-control {
+  border-radius: 25px;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.29);
+  border-radius: 5px;
+}
+.carousel-caption p {
+  color: #ccb59b;
+}
+
+#menu {
+  position: relative;
+  width: 100%;
+  top: 0;
+  padding: 0 10%;
+  background: #ccb59b;
+  transition: 1s;
+  z-index: 4;
+}
+#menu nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#menu nav .logo {
+  width: 70px;
+  padding: 5px;
+}
+#menu nav .logo img {
+  width: 100%;
+}
+#menu nav ul {
+  vertical-align: middle;
+  transition: 1s;
+}
+@media screen and (max-width: 610px) {
+  #menu nav ul {
+    display: none;
+  }
+}
+#menu nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 15px;
+}
+#menu nav ul li .highlight {
+  position: relative;
+  color: #ffecd6;
+  text-decoration: none;
+  padding: 10px 5px;
+  font-size: 1.5rem;
+  transition: 1s;
+}
+#menu nav ul li .highlight::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: #ffecd6;
+  border-radius: 10px;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: 1s trait forwards;
+}
+@keyframes trait {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 50px;
+  }
+}
+#menu nav ul li a {
+  position: relative;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  color: #664825;
+}
+#menu nav ul li a:hover {
+  color: #ffecd6;
+  text-decoration: none;
+}
+#menu nav ul li a:hover::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: #ffecd6;
+  border-radius: 10px;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: 1s trait forwards;
+}
+@keyframes trait {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 50px;
+  }
+}
+#menu nav #mobilemenu {
+  display: none;
+  transition: 1s;
+}
+#menu nav #mobilemenu li {
+  display: block;
+  list-style: none;
+  margin: 10px 5px;
+}
+#menu nav #mobilemenu li .highlight {
+  position: relative;
+  color: #ffecd6;
+  text-decoration: none;
+  padding: 10px 5px;
+  font-size: 1.5rem;
+  transition: 1s;
+}
+#menu nav #mobilemenu li .highlight::after {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 3px;
+  background-color: #ffecd6;
+  border-radius: 10px;
+  top: 30px;
+  left: 5px;
+  animation: 1s trait forwards;
+}
+@keyframes trait {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 50px;
+  }
+}
+#menu nav #mobilemenu li a {
+  position: relative;
+  text-decoration: none;
+  padding: 10px 5px;
+  font-size: 1.5rem;
+  color: #664825;
+  transition: 1s;
+}
+#menu nav #mobilemenu li a:hover {
+  text-decoration: none;
+  color: #ffecd6;
+}
+#menu nav #mobilemenu li a:hover::after {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 3px;
+  background-color: #ffecd6;
+  border-radius: 10px;
+  top: 30px;
+  left: 5px;
+}
+@media screen and (max-width: 610px) {
+  #menu nav #mobilemenu {
+    display: block;
+  }
+}
+
+.fullwidth {
+  width: 100%;
+  padding: 0 10%;
+  background: #ffecd6;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 40% auto;
+  grid-template-areas: "mt mi";
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../../images/baby4.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+@media screen and (max-width: 900px) {
+  .fullwidth {
+    padding: 0 5%;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .fullwidth {
+    display: block;
+  }
+}
+.fullwidth .ppltitle {
+  grid-area: mt;
+  position: relative;
+}
+.fullwidth .ppltitle .titles {
+  position: relative;
+  padding: 15px 0;
+  left: 0;
+}
+@media screen and (max-width: 1050px) {
+  .fullwidth .ppltitle .titles {
+    padding: 5px 0;
+  }
+}
+.fullwidth .ppltitle .titles img {
+  position: relative;
+  height: 250px;
+}
+@media screen and (max-width: 1050px) {
+  .fullwidth .ppltitle .titles img {
+    height: 150px;
+  }
+}
+.fullwidth .ppltitle .titles h1 {
+  font-family: mali;
+  color: #ffecd6;
+  font-size: 3rem;
+}
+.fullwidth .ppltitle .titles h2 {
+  font-family: mali;
+  color: #ccb59b;
+  font-size: 2rem;
+}
+.fullwidth .pplimage {
+  grid-area: mi;
+  position: relative;
+}
+@media screen and (max-width: 1050px) {
+  .fullwidth .pplimage {
+    display: none;
+  }
+}
+
+.normalcontainer {
+  width: 100%;
+  padding: 0 10%;
+  background: #ffecd6;
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+@media screen and (max-width: 900px) {
+  .normalcontainer {
+    padding: 0 5%;
+  }
+}
+.normalcontainer h2 {
+  position: relative;
+  margin: 15px auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.normalcontainer h2 span {
+  font-family: mali;
+  font-size: 4rem;
+  color: #3d8a6c;
+}
+.normalcontainer h2::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 5px;
+  background-color: #ccb59b;
+  border-radius: 10px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.normalcontainer .anim01 {
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: 100vw;
+  background: #ccb59b;
+  border-radius: 100%;
+  z-index: 0;
+  animation: 20s anim01 infinite linear;
+}
+@keyframes anim01 {
+  0% {
+    top: 35%;
+    left: -85%;
+  }
+  50% {
+    top: 30%;
+    left: -80%;
+  }
+  100% {
+    top: 35%;
+    left: -85%;
+  }
+}
+.normalcontainer .anim02 {
+  display: block;
+  position: absolute;
+  top: 5%;
+  left: 80%;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vw;
+  background: #faefe3;
+  border-radius: 100%;
+  z-index: 0;
+  animation: 20s anim02 infinite linear;
+}
+@keyframes anim02 {
+  0% {
+    top: 5%;
+    left: 80%;
+  }
+  50% {
+    top: 10%;
+    left: 75%;
+  }
+  100% {
+    top: 5%;
+    left: 80%;
+  }
+}
+.normalcontainer .bandeau01 {
+  position: relative;
+  display: flex;
+  margin: 25px 10%;
+}
+@media screen and (max-width: 1000px) {
+  .normalcontainer .bandeau01 {
+    margin: 25px 5%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .normalcontainer .bandeau01 {
+    margin: 25px 2%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .normalcontainer .bandeau01 {
+    display: block;
+  }
+}
+.normalcontainer .bandeau01 #pereenfant {
+  position: relative;
+  width: 50%;
+  max-height: 325px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 740px) and (min-width: 600px) {
+  .normalcontainer .bandeau01 #pereenfant {
+    width: 40%;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .normalcontainer .bandeau01 #pereenfant {
+    width: 100%;
+    margin: auto;
+  }
+}
+.normalcontainer .bandeau01 #pereenfant img {
+  height: 100%;
+  animation: 10s imgzoom infinite linear;
+}
+@keyframes imgzoom {
+  0% {
+    transform: scale(1.1);
+  }
+  30% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+.normalcontainer .bandeau01 .textpart {
+  position: relative;
+  width: 50%;
+  padding: 0 25px;
+}
+@media screen and (max-width: 740px) {
+  .normalcontainer .bandeau01 .textpart {
+    width: 60%;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .normalcontainer .bandeau01 .textpart {
+    width: 100%;
+    margin: 20px auto;
+  }
+}
+.normalcontainer .pictocontainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 25px;
+}
+@media screen and (max-width: 610px) {
+  .normalcontainer .pictocontainer {
+    display: block;
+    margin: 10px auto;
+  }
+}
+.normalcontainer .pictocontainer .pictobox {
+  display: block;
+  position: relative;
+  min-width: 250px;
+  max-width: 400px;
+  width: 20%;
+  text-align: center;
+  margin: 25px;
+  padding: 2%;
+  border: solid 1px #664825;
+  border-radius: 5px;
+  background-color: #faefe3;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 900px) {
+  .normalcontainer .pictocontainer .pictobox {
+    min-width: 150px;
+    max-width: 400px;
+    width: 20%;
+    margin: 15px;
+  }
+}
+@media screen and (max-width: 610px) {
+  .normalcontainer .pictocontainer .pictobox {
+    display: block;
+    min-width: 250px;
+    max-width: 400px;
+    width: 20%;
+    margin: 20px auto;
+  }
+}
+.normalcontainer .pictocontainer .pictobox h3 {
+  display: block;
+  text-align: center;
+  position: relative;
+  font-family: mali;
+  font-size: 4rem;
+  font-weight: bolder;
+  color: #664825;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 900px) {
+  .normalcontainer .pictocontainer .pictobox h3 {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 610px) {
+  .normalcontainer .pictocontainer .pictobox h3 {
+    font-size: 4rem;
+  }
+}
+.normalcontainer .pictocontainer .pictobox h3::after {
+  content: "";
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  width: 30px;
+  height: 5px;
+  background-color: #ccb59b;
+  border-radius: 10px;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 900px) {
+  .normalcontainer .pictocontainer .pictobox h3::after {
+    top: 25px;
+  }
+}
+@media screen and (max-width: 610px) {
+  .normalcontainer .pictocontainer .pictobox h3::after {
+    top: 45px;
+  }
+}
+.normalcontainer .pictocontainer .pictobox img {
+  height: 70px;
+}
+@media screen and (max-width: 900px) {
+  .normalcontainer .pictocontainer .pictobox img {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 610px) {
+  .normalcontainer .pictocontainer .pictobox img {
+    height: 110px;
+  }
+}
+.normalcontainer .ourobjective {
+  min-width: 400px;
+  width: 50%;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  .normalcontainer .ourobjective {
+    min-width: 200px;
+    width: 100%;
+    max-width: 500px;
+  }
+}
+.normalcontainer .ourobjective #part1 {
+  position: relative;
+}
+.normalcontainer .ourobjective #part1::after {
+  content: "";
+  position: absolute;
+  top: 70%;
+  left: 110%;
+  width: 23vw;
+  height: 23vw;
+  background: url("../../images/kid.jpg") center/cover;
+  box-shadow: 2px 2px 13px rgba(0, 0, 0, 0.2);
+  border-radius: var(--defaultpath);
+  transition: 2s;
+  z-index: 2;
+}
+@media screen and (max-width: 925px) {
+  .normalcontainer .ourobjective #part1::after {
+    display: none;
+  }
+}
+.normalcontainer .ourobjective #part2 {
+  position: relative;
+  transition: 2s;
+}
+.normalcontainer .ourobjective #part2::before {
+  content: "";
+  position: absolute;
+  top: 150px;
+  left: -70%;
+  width: 23vw;
+  height: 23vw;
+  background: url("../../images/family.jpg") center/cover;
+  background-repeat: no-repeat;
+  border: solid 6px #ccb59b;
+  border-radius: 100%;
+  transition: 1s;
+}
+@media screen and (max-width: 925px) {
+  .normalcontainer .ourobjective #part2::before {
+    display: none;
+  }
+}
+.normalcontainer .ourobjective h2 {
+  margin-bottom: 15px;
+}
+.normalcontainer .ourobjective h2::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 5px;
+  background-color: #ccb59b;
+  border-radius: 10px;
+}
+.normalcontainer .ourobjective h3 {
+  position: relative;
+  color: #ccb59b;
+  margin-bottom: 10px;
+}
+.normalcontainer .ourobjective p {
+  margin-bottom: 50px;
+  position: relative;
+}
+.normalcontainer .ourobjective p::after {
+  content: "";
+  position: absolute;
+  top: 115%;
+  left: 50%;
+  width: 50px;
+  height: 5px;
+  background-color: #8cafa2;
+  border-radius: 10px;
+  transform: translateX(-50%);
+}
+
+.banner01 {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 400px;
+  background: url("../../images/mam.png") center/cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.banner01 .mybird {
+  position: absolute;
+  top: 50%;
+  height: 80px;
+  width: auto;
+  animation: birdy 15s infinite linear;
+  z-index: 0;
+}
+@keyframes birdy {
+  0% {
+    left: 100%;
+  }
+  50% {
+    left: 25%;
+  }
+  100% {
+    left: -50%;
+  }
+}
+.banner01 p {
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  padding: 50px;
+  font-family: mali;
+  font-size: 3rem;
+  font-weight: bolder;
+  color: #faefe3;
+}
+@media screen and (max-width: 775px) {
+  .banner01 p {
+    width: 90%;
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 775px) {
+  .banner01 p {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .banner01 p {
+    width: 97%;
+    font-size: 2rem;
+  }
+}
+.banner01 p span {
+  font-family: mali;
+  font-size: 3rem;
+  color: #3d8a6c;
+}
+@media screen and (max-width: 775px) {
+  .banner01 p span {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .banner01 p span {
+    width: 97%;
+    font-size: 2rem;
+  }
+}
+.banner01 img {
+  display: block;
+  width: 30%;
+  max-width: 250px;
+  max-width: 150px;
+  margin: auto;
+}
+
+.teamcontainer {
+  width: 100%;
+  background: #ffecd6;
+  margin: auto;
+  padding: 1% 10%;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  align-items: center;
+}
+@media screen and (max-width: 1000px) {
+  .teamcontainer {
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 750px) {
+  .teamcontainer {
+    display: block;
+  }
+}
+.teamcontainer .ourteam {
+  width: 50%;
+  height: auto;
+  padding: 25px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1100px) {
+  .teamcontainer .ourteam {
+    width: 50%;
+    padding: 5px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .teamcontainer .ourteam {
+    width: 90%;
+  }
+}
+.teamcontainer .ourteam h2 {
+  font-family: mali;
+  font-size: 4rem;
+  position: relative;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 1000px) {
+  .teamcontainer .ourteam h2 {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 750px) {
+  .teamcontainer .ourteam h2 {
+    font-size: 4rem;
+  }
+}
+.teamcontainer .ourteam h2::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 5px;
+  background-color: #ccb59b;
+  border-radius: 10px;
+  top: 105%;
+  left: 0;
+}
+.teamcontainer .ourteam p {
+  position: relative;
+}
+.teamcontainer .mamcontainer {
+  position: relative;
+  width: 40%;
+  padding: 25px;
+  min-height: 400px;
+  z-index: 1;
+}
+@media screen and (max-width: 1100px) {
+  .teamcontainer .mamcontainer {
+    width: 50%;
+    padding: 5px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .teamcontainer .mamcontainer {
+    width: 80%;
+    margin: auto;
+    min-height: 200px;
+  }
+}
+.teamcontainer .mamcontainer #myCarousel .carousel-inner img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  align-items: center;
+  border-radius: 10px;
+}
+.teamcontainer .mamcontainer #myCarousel .carousel-inner p {
+  position: relative;
+  text-align: center;
+}
+
+.banner02 {
+  position: relative;
+  width: 100%;
+  background: #ffecd6;
+  margin: auto;
+  padding: 1% 10%;
+  padding-bottom: 50px;
+}
+.banner02 h2 {
+  text-align: center;
+  margin-bottom: 35px;
+  position: relative;
+}
+@media screen and (max-width: 350px) {
+  .banner02 h2 {
+    font-size: 2rem;
+  }
+}
+.banner02 h2::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 5px;
+  background-color: #ccb59b;
+  border-radius: 10px;
+  top: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.banner02 p {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 450px) {
+  .banner02 p {
+    width: 95%;
+  }
+}
+.banner02 button {
+  position: relative;
+  margin: 20px auto 0;
+  display: block;
+  min-width: 50px;
+  max-width: 400px;
+  min-height: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: solid 1px #664825;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  min-width: 150px;
+  width: 25%;
+  max-width: 250px;
+  color: #ffecd6;
+  border: solid 1px #e7e7e7;
+  background: #ccb59b;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: 1s;
+}
+@media screen and (max-width: 750px) {
+  .banner02 button {
+    width: 20%;
+  }
+}
+.banner02 button:hover {
+  color: #664825;
+  background: #ffecd6;
+  border: solid 1px #664825;
+  left: 5px;
+}
+
+#mymodal {
+  width: 100%;
+  height: auto;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.6);
+}
+#mymodal .modal-content {
+  width: 70%;
+  margin: 100px auto 0;
+  background: #ffecd6;
+}
+@media screen and (max-width: 600px) {
+  #mymodal .modal-content {
+    width: 90%;
+  }
+}
+#mymodal .modal-content .modal-header .entete {
+  position: relative;
+  text-align: center;
+}
+#mymodal .modal-content .modal-header .entete::before {
+  position: absolute;
+  content: "";
+  top: -25px;
+  left: -30%;
+  width: 100px;
+  height: 100px;
+  background: url("../../images/logo.png") center/cover;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1000px) {
+  #mymodal .modal-content .modal-header .entete::before {
+    top: -65px;
+    left: 40%;
+    width: 70px;
+    height: 70px;
+    rtansform: translateX(-40%);
+  }
+}
+#mymodal .modal-content .modal-body {
+  padding: 50px 10%;
+}
+#mymodal .modal-content .modal-body .bodycontainer {
+  margin: 0 auto;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform {
+  margin: 0 auto;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form {
+  position: relative;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form input,
+#mymodal .modal-content .modal-body .bodycontainer .homeform form select {
+  min-height: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: solid 1px #664825;
+  background-color: whitesmoke;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form #childname {
+  width: 73%;
+}
+@media screen and (max-width: 730px) {
+  #mymodal .modal-content .modal-body .bodycontainer .homeform form #childname {
+    width: 100%;
+  }
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form input[type=date] {
+  width: 150px;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .topinput {
+  min-width: 15%;
+  width: 200px;
+  max-width: 80%;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .parents {
+  width: 100%;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .phone {
+  width: 25%;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form input[type=submit], #mymodal .modal-content .modal-body .bodycontainer .homeform form #validateform, #mymodal .modal-content .modal-body .bodycontainer .homeform form #closeme {
+  position: relative;
+  margin: 20px auto 0;
+  display: block;
+  min-width: 50px;
+  max-width: 400px;
+  min-height: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: solid 1px #664825;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  min-width: 100px;
+  width: 25%;
+  max-width: 200px;
+  color: #ffecd6;
+  border: solid 1px #e7e7e7;
+  background: #ccb59b;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: 1s;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form input[type=submit]:hover, #mymodal .modal-content .modal-body .bodycontainer .homeform form #validateform:hover, #mymodal .modal-content .modal-body .bodycontainer .homeform form #closeme:hover {
+  color: #664825;
+  background: #ffecd6;
+  border: solid 1px #664825;
+  left: 5px;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form #select,
+#mymodal .modal-content .modal-body .bodycontainer .homeform form select {
+  min-width: 10%;
+  max-width: 20%;
+  min-height: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: solid 1px #664825;
+  background-color: whitesmoke;
+}
+@media screen and (max-width: 730px) {
+  #mymodal .modal-content .modal-body .bodycontainer .homeform form #select,
+  #mymodal .modal-content .modal-body .bodycontainer .homeform form select {
+    min-width: 75px;
+  }
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid {
+  position: relative;
+  padding: 20px;
+  background: #faefe3;
+  border: solid 1px #664825;
+}
+@media screen and (min-width: 630px) {
+  #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: "jour arrivee depart" "lundi lundiarr lundidep" "mardi mardiarr mardidep" "mercredi mercrediarr mercredidep" "jeudi jeudiarr jeudidep" "vendredi vendrediarr vendredidep";
+  }
+  #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .vide01, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .vide02, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .vide03, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .vide04, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .vide05, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme01, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme02, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme03, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme04, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme05, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme06, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme07, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme08, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme09, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme10 {
+    display: none;
+  }
+}
+@media screen and (max-width: 630px) {
+  #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: auto auto;
+    grid-template-areas: "lundi lundi" "hideme01 lundiarr" "hideme02 lundidep" "mardi mardi" "hideme03 mardiarr" "hideme04 mardidep" "mercredi mercredi" "hideme05 mercrediarr" "hideme06 mercredidep" "jeudi jeudi" "hideme07 jeudiarr" "hideme08 jeudidep" "vendredi vendredi" "hideme09 vendrediarr" "hideme10 vendredidep";
+  }
+  #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .monjour, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .monarrivee, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .mondepart {
+    display: none;
+  }
+  #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .lundi, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .mardi, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .mercredi, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .jeudi, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .vendredi {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme01, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme02, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme03, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme04, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme05, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme06, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme07, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme08, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme09, #mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme10 {
+    padding-top: 10px;
+    text-align: center;
+  }
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .monjour {
+  grid-area: jour;
+  font-weight: bold;
+  text-decoration: underline;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .monarrivee {
+  grid-area: arrivee;
+  font-weight: bold;
+  text-decoration: underline;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .mondepart {
+  grid-area: depart;
+  font-weight: bold;
+  text-decoration: underline;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .lundi {
+  grid-area: lundi;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .mardi {
+  grid-area: mardi;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .mercredi {
+  grid-area: mercredi;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .jeudi {
+  grid-area: jeudi;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .vendredi {
+  grid-area: vendredi;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme01 {
+  grid-area: hideme01;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme02 {
+  grid-area: hideme02;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme03 {
+  grid-area: hideme03;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme04 {
+  grid-area: hideme04;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme05 {
+  grid-area: hideme05;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme06 {
+  grid-area: hideme06;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme07 {
+  grid-area: hideme07;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme08 {
+  grid-area: hideme08;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme09 {
+  grid-area: hideme09;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .hideme10 {
+  grid-area: hideme10;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .vide01 {
+  grid-area: vide01;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .vide02 {
+  grid-area: vide02;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .vide03 {
+  grid-area: vide03;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .vide04 {
+  grid-area: vide04;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid .vide05 {
+  grid-area: vide05;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid #lundiarrivee {
+  grid-area: lundiarr;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid #lundidepart {
+  grid-area: lundidep;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid #mardiarrivee {
+  grid-area: mardiarr;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid #mardidepart {
+  grid-area: mardidep;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid #mercrediarrivee {
+  grid-area: mercrediarr;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid #mercredidepart {
+  grid-area: mercredidep;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid #jeudiarrivee {
+  grid-area: jeudiarr;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid #jeudidepart {
+  grid-area: jeudidep;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid #vendrediarrivee {
+  grid-area: vendrediarr;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mygrid #vendredidepart {
+  grid-area: vendredidep;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .myfather {
+  position: relative;
+  padding: 20px;
+  background: #faefe3;
+  border: solid 1px #664825;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .myfather input {
+  width: 100%;
+}
+@media screen and (min-width: 500px) {
+  #mymodal .modal-content .modal-body .bodycontainer .homeform form .myfather {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 15% 85%;
+    grid-template-areas: "dadname nomdupere" "dadtel teldupere" "dadmail maildupere" "dadprof profdupere";
+  }
+  #mymodal .modal-content .modal-body .bodycontainer .homeform form .myfather #teldupere {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 500px) {
+  #mymodal .modal-content .modal-body .bodycontainer .homeform form .myfather {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    grid-template-columns: auto;
+    grid-template-areas: "dadname" "nomdupere" "dadtel" "teldupere" "dadmail" "maildupere" "dadprof" "profdupere";
+  }
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .myfather .dadname {
+  grid-area: dadname;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .myfather .dadtel {
+  grid-area: dadtel;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .myfather .dadmail {
+  grid-area: dadmail;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .myfather .dadprof {
+  grid-area: dadprof;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .myfather #nomdupere {
+  grid-area: nomdupere;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .myfather #teldupere {
+  grid-area: teldupere;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .myfather #maildupere {
+  grid-area: maildupere;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .myfather #profdupere {
+  grid-area: profdupere;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mymother {
+  position: relative;
+  padding: 20px;
+  background: #faefe3;
+  border: solid 1px #664825;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mymother input {
+  width: 100%;
+}
+@media screen and (min-width: 500px) {
+  #mymodal .modal-content .modal-body .bodycontainer .homeform form .mymother {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    grid-template-columns: 15% 85%;
+    grid-template-areas: "momname nomdemere" "nomdemereerror nomdemereerror" "momtel teldemere" "teldemereerror teldemereerror" "mommail maildemere" "maildemereerror maildemereerror" "momprof profdemere" "profdemereerror profdemereerror";
+  }
+  #mymodal .modal-content .modal-body .bodycontainer .homeform form .mymother #teldemere {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 500px) {
+  #mymodal .modal-content .modal-body .bodycontainer .homeform form .mymother {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    grid-template-columns: auto;
+    grid-template-areas: "momname" "nomdemere" "nomdemereerror" "momtel" "teldemere" "teldemereerror" "mommail" "maildemere" "maildemereerror" "momprof" "profdemere" "profdemereerror";
+  }
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mymother .momname {
+  grid-area: momname;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mymother .momtel {
+  grid-area: momtel;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mymother .mommail {
+  grid-area: mommail;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mymother .momprof {
+  grid-area: momprof;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mymother #nomdemere {
+  grid-area: nomdemere;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mymother #teldemere {
+  grid-area: teldemere;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mymother #maildemere {
+  grid-area: maildemere;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mymother #profdemere {
+  grid-area: profdemere;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mymother #nomdemereerror {
+  grid-area: nomdemereerror;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mymother #teldemereerror {
+  grid-area: teldemereerror;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mymother #maildemereerror {
+  grid-area: maildemereerror;
+}
+#mymodal .modal-content .modal-body .bodycontainer .homeform form .mymother #profdemereerror {
+  grid-area: profdemereerror;
+}
+#mymodal .modal-content .modal-footer #validateform, #mymodal .modal-content .modal-footer #closeme {
+  position: relative;
+  margin: 20px auto 0;
+  padding: 10px;
+  border: solid 1px #664825;
+  border-radius: 20px;
+  max-width: 200px;
+  width: 10%;
+  min-width: 100px;
+  color: #ffecd6;
+  border: solid 1px #e7e7e7;
+  background: #ccb59b;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: 1s;
+}
+#mymodal .modal-content .modal-footer #validateform:hover, #mymodal .modal-content .modal-footer #closeme:hover {
+  color: #664825;
+  background: #ffecd6;
+  border: solid 1px #664825;
+  left: 5px;
+}
+
+.mamfooter {
+  position: relative;
+  background: #ccb59b;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.mamfooter .footercontainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  align-items: flex-start;
+  height: 100%;
+  padding: 4% 5%;
+}
+@media screen and (max-width: 1000px) {
+  .mamfooter .footercontainer {
+    width: 95%;
+    padding: 2% 2%;
+  }
+}
+@media screen and (max-width: 875px) {
+  .mamfooter .footercontainer {
+    display: block;
+    padding: 4% 0;
+    vertical-align: top;
+  }
+}
+.mamfooter .footercontainer .mapform {
+  position: relative;
+  width: 40%;
+}
+@media screen and (max-width: 875px) {
+  .mamfooter .footercontainer .mapform {
+    width: 100%;
+  }
+}
+.mamfooter .footercontainer .mapform h3 {
+  position: relative;
+}
+.mamfooter .footercontainer .mapform h3::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 5px;
+  background-color: #ffecd6;
+  border-radius: 10px;
+  top: 120%;
+  left: 0;
+}
+.mamfooter .footercontainer .mapform .googlemap {
+  width: 100%;
+}
+.mamfooter .footercontainer .mapform .googlemap iframe {
+  width: 95%;
+  border: solid 3px #664825;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 875px) {
+  .mamfooter .footercontainer .mapform .googlemap iframe {
+    width: 100%;
+  }
+}
+.mamfooter .footercontainer .footcol02 {
+  position: relative;
+  width: 25%;
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 875px) {
+  .mamfooter .footercontainer .footcol02 {
+    display: inline-block;
+    width: 45%;
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 550px) {
+  .mamfooter .footercontainer .footcol02 {
+    display: block;
+    width: 95%;
+  }
+}
+.mamfooter .footercontainer .footcol02 h3 {
+  position: relative;
+}
+.mamfooter .footercontainer .footcol02 h3::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 5px;
+  background-color: #ffecd6;
+  border-radius: 10px;
+  top: 120%;
+  left: 0;
+}
+.mamfooter .footercontainer .footcol02 ul {
+  position: relative;
+}
+.mamfooter .footercontainer .footcol02 ul li {
+  list-style: none;
+  line-height: 30px;
+}
+.mamfooter .footercontainer .footcol02 ul li a {
+  color: #664825;
+}
+.mamfooter .footercontainer .footcol02 ul li a:hover {
+  color: #ffecd6;
+}
+.mamfooter .footercontainer .footcol02 ul li a .fontawe {
+  color: #ffecd6;
+}
+.mamfooter .footercontainer .footcol02 ul li a .fontawe:hover {
+  color: #ffecd6;
+}
+.mamfooter .footercontainer .footcol03 {
+  width: 25%;
+}
+@media screen and (max-width: 875px) {
+  .mamfooter .footercontainer .footcol03 {
+    display: inline-block;
+    width: 45%;
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 550px) {
+  .mamfooter .footercontainer .footcol03 {
+    display: block;
+    width: 95%;
+  }
+}
+.mamfooter .footercontainer .footcol03 h3 {
+  position: relative;
+  margin-bottom: 20px;
+}
+.mamfooter .footercontainer .footcol03 h3::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 5px;
+  background-color: #ffecd6;
+  border-radius: 10px;
+  top: 120%;
+  left: 0;
+}
+.mamfooter .footercontainer .footcol03 ul li {
+  list-style: none;
+  line-height: 30px;
+}
+
+#contactback {
+  width: 100%;
+  background: url("../../images/cuddly.jpg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 5% 0;
+}
+#contactback .formcontainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+  margin: auto;
+  background: rgba(255, 236, 214, 0.7529411765);
+  padding: 5% 0;
+  border: solid 1px #664825;
+  border-radius: 5px;
+  box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 800px) {
+  #contactback .formcontainer {
+    display: block;
+  }
+}
+#contactback .formcontainer .formtext {
+  width: 50%;
+  padding: 0 5%;
+}
+@media screen and (max-width: 800px) {
+  #contactback .formcontainer .formtext {
+    width: 85%;
+    margin: auto;
+  }
+}
+#contactback .formcontainer .formtext h1 {
+  color: #664825;
+}
+#contactback .formcontainer .formtext p, #contactback .formcontainer .formtext ul li {
+  color: #664825;
+}
+#contactback .formcontainer .formtext ul {
+  padding: 0 15px;
+}
+#contactback .formcontainer .formform {
+  width: 50%;
+}
+@media screen and (max-width: 800px) {
+  #contactback .formcontainer .formform {
+    display: block;
+    width: 85%;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 660px) {
+  #contactback .formcontainer .formform {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 800px) {
+  #contactback .formcontainer .formform form {
+    display: block;
+    margin: auto;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 660px) {
+  #contactback .formcontainer .formform form {
+    width: 95%;
+  }
+}
+#contactback .formcontainer .formform form label {
+  color: #664825;
+  margin-top: 10px;
+}
+#contactback .formcontainer .formform form input[type=text], #contactback .formcontainer .formform form input[type=email] {
+  display: block;
+  min-width: 50px;
+  max-width: 400px;
+  min-height: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: solid 1px #664825;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  width: 70%;
+}
+@media screen and (max-width: 700px) {
+  #contactback .formcontainer .formform form input[type=text], #contactback .formcontainer .formform form input[type=email] {
+    width: 85%;
+  }
+}
+#contactback .formcontainer .formform form textarea {
+  width: 70%;
+  display: block;
+  min-width: 50px;
+  max-width: 400px;
+  min-height: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: solid 1px #664825;
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+@media screen and (max-width: 800px) {
+  #contactback .formcontainer .formform form textarea {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 600px) {
+  #contactback .formcontainer .formform form textarea {
+    width: 95%;
+  }
+}
+#contactback .formcontainer .formform form button[type=submit] {
+  position: relative;
+  display: block;
+  min-width: 50px;
+  max-width: 400px;
+  min-height: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: solid 1px #664825;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  width: 150px;
+  transition: 1s;
+}
+#contactback .formcontainer .formform form button[type=submit]:hover {
+  color: whitesmoke;
+  border: solid 1px whitesmoke;
+  background-color: #664825;
+  left: 5px;
+}
+@media screen and (max-width: 600px) {
+  #contactback .formcontainer .formform form button[type=submit] {
+    width: 95%;
+  }
+}
+
+.aboutus {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10%;
+  background: linear-gradient(rgba(255, 236, 214, 0.1882352941), rgba(255, 236, 214, 0.1882352941)), url("../../images/pexels.jpg") center/cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  overflow: hidden;
+  height: 350px;
+  margin: 0;
+}
+.aboutus .titre {
+  width: 50%;
+}
+.aboutus .titre p {
+  font-size: 7rem;
+  font-weight: 800;
+  line-height: 70px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 1000px) {
+  .aboutus .titre p {
+    font-size: 5rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  .aboutus .titre p {
+    width: 100%;
+    font-size: 3rem;
+  }
+}
+.aboutus .vide {
+  width: 50%;
+}
+
+.textintro {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 5% 0;
+  background: #ffecd6;
+}
+.textintro .textcontainer {
+  position: relative;
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+}
+.textintro .textcontainer h1 {
+  text-align: center;
+  margin-bottom: 35px;
+  position: relative;
+}
+.textintro .textcontainer h1::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 5px;
+  background-color: #ccb59b;
+  border-radius: 10px;
+  top: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 640px) {
+  .textintro .textcontainer h1 {
+    font-size: 2rem;
+  }
+}
+
+#svgContainer {
+  width: 100%;
+  overflow: hidden;
+  transition: 1s;
+}
+#svgContainer #svgPath1,
+#svgContainer #svgPath2,
+#svgContainer #svgPath3,
+#svgContainer #svgPath4,
+#svgContainer #svgPath5 {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: var(--svgpathheighgt);
+  transition: 1s;
+  z-index: 1;
+}
+
+.mamservices {
+  position: relative;
+  background: #ffecd6;
+  padding-top: 1200px;
+  width: 100%;
+  padding: 0 10%;
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: "p1 t1" "t2 p2" "p3 t3" "t4 p4" "p5 t5" "t6 p6";
+}
+@media screen and (max-width: 700px) {
+  .mamservices {
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+    grid-template-columns: 100%;
+    grid-template-areas: "p1" "t1" "p2" "t2" "p3" "t3" "p4" "t4" "p5" "t5" "p6" "t6";
+  }
+}
+.mamservices .photo1 {
+  position: relative;
+  place-self: center;
+  z-index: 1;
+  grid-area: p1;
+}
+.mamservices .photo1 img {
+  position: relative;
+  display: block;
+  width: auto;
+  margin: auto;
+  height: auto;
+  max-height: 300px;
+  border-radius: 100%;
+  border: solid 1px #664825;
+  box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.29);
+  transition: 4s;
+  border-radius: var(--defaultpath);
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .photo1 img {
+    width: auto;
+    height: auto;
+  }
+}
+.mamservices .text1 {
+  grid-area: t1;
+  z-index: 2;
+  position: relative;
+  width: 85%;
+  text-align: center;
+  place-self: center;
+  margin: 35px 0;
+  padding: 10px;
+  background: #faefe3;
+  border: solid 1px #664825;
+  border-radius: 15px;
+}
+@media screen and (max-width: 700px) {
+  .mamservices .text1 {
+    width: 95%;
+    padding: 5px;
+  }
+}
+.mamservices .text1::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  background: url("../../images/logo.png") center/cover;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .text1::before {
+    width: 75px;
+    height: 75px;
+    top: -25px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .mamservices .text1::before {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+  }
+}
+.mamservices .text1 h2 {
+  text-align: center;
+  margin-bottom: 35px;
+  position: relative;
+}
+.mamservices .text1 h2::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 5px;
+  background-color: #ccb59b;
+  border-radius: 10px;
+  top: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .text1 h2 {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .mamservices .text1 h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+}
+.mamservices .text2 {
+  grid-area: t2;
+  z-index: 3;
+  position: relative;
+  width: 85%;
+  text-align: center;
+  place-self: center;
+  margin: 35px 0;
+  padding: 10px;
+  background: #faefe3;
+  border: solid 1px #664825;
+  border-radius: 15px;
+}
+@media screen and (max-width: 700px) {
+  .mamservices .text2 {
+    width: 95%;
+    padding: 5px;
+  }
+}
+.mamservices .text2::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  background: url("../../images/logo.png") center/cover;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .text2::before {
+    width: 75px;
+    height: 75px;
+    top: -25px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .mamservices .text2::before {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+  }
+}
+.mamservices .text2 h2 {
+  text-align: center;
+  margin-bottom: 35px;
+  position: relative;
+}
+.mamservices .text2 h2::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 5px;
+  background-color: #ccb59b;
+  border-radius: 10px;
+  top: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .text2 h2 {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .mamservices .text2 h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+}
+.mamservices .photo2 {
+  position: relative;
+  place-self: center;
+  grid-area: p2;
+  z-index: 2;
+}
+.mamservices .photo2 img {
+  position: relative;
+  display: block;
+  width: auto;
+  margin: auto;
+  height: auto;
+  max-height: 300px;
+  border-radius: 100%;
+  border: solid 1px #664825;
+  box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.29);
+  transition: 4s;
+  border-radius: var(--defaultpath);
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .photo2 img {
+    width: auto;
+    height: auto;
+  }
+}
+.mamservices .photo3 {
+  position: relative;
+  place-self: center;
+  grid-area: p3;
+  z-index: 2;
+}
+.mamservices .photo3 img {
+  position: relative;
+  display: block;
+  width: auto;
+  margin: auto;
+  height: auto;
+  max-height: 300px;
+  border-radius: 100%;
+  border: solid 1px #664825;
+  box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.29);
+  transition: 4s;
+  border-radius: var(--defaultpath);
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .photo3 img {
+    width: auto;
+    height: auto;
+  }
+}
+.mamservices .text3 {
+  grid-area: t3;
+  z-index: 2;
+  position: relative;
+  width: 85%;
+  text-align: center;
+  place-self: center;
+  margin: 35px 0;
+  padding: 10px;
+  background: #faefe3;
+  border: solid 1px #664825;
+  border-radius: 15px;
+}
+@media screen and (max-width: 700px) {
+  .mamservices .text3 {
+    width: 95%;
+    padding: 5px;
+  }
+}
+.mamservices .text3::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  background: url("../../images/logo.png") center/cover;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .text3::before {
+    width: 75px;
+    height: 75px;
+    top: -25px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .mamservices .text3::before {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+  }
+}
+.mamservices .text3 h2 {
+  text-align: center;
+  margin-bottom: 35px;
+  position: relative;
+}
+.mamservices .text3 h2::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 5px;
+  background-color: #ccb59b;
+  border-radius: 10px;
+  top: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .text3 h2 {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .mamservices .text3 h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+}
+.mamservices .text4 {
+  grid-area: t4;
+  z-index: 3;
+  position: relative;
+  width: 85%;
+  text-align: center;
+  place-self: center;
+  margin: 35px 0;
+  padding: 10px;
+  background: #faefe3;
+  border: solid 1px #664825;
+  border-radius: 15px;
+}
+@media screen and (max-width: 700px) {
+  .mamservices .text4 {
+    width: 95%;
+    padding: 5px;
+  }
+}
+.mamservices .text4::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  background: url("../../images/logo.png") center/cover;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .text4::before {
+    width: 75px;
+    height: 75px;
+    top: -25px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .mamservices .text4::before {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+  }
+}
+.mamservices .text4 h2 {
+  text-align: center;
+  margin-bottom: 35px;
+  position: relative;
+}
+.mamservices .text4 h2::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 5px;
+  background-color: #ccb59b;
+  border-radius: 10px;
+  top: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .text4 h2 {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .mamservices .text4 h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+}
+.mamservices .photo4 {
+  position: relative;
+  place-self: center;
+  grid-area: p4;
+  z-index: 2;
+}
+.mamservices .photo4 img {
+  position: relative;
+  display: block;
+  width: auto;
+  margin: auto;
+  height: auto;
+  max-height: 300px;
+  border-radius: 100%;
+  border: solid 1px #664825;
+  box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.29);
+  transition: 4s;
+  border-radius: var(--defaultpath);
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .photo4 img {
+    width: auto;
+    height: auto;
+  }
+}
+.mamservices .photo5 {
+  position: relative;
+  place-self: center;
+  grid-area: p5;
+  z-index: 2;
+}
+.mamservices .photo5 img {
+  position: relative;
+  display: block;
+  width: auto;
+  margin: auto;
+  height: auto;
+  max-height: 300px;
+  border-radius: 100%;
+  border: solid 1px #664825;
+  box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.29);
+  transition: 4s;
+  border-radius: var(--defaultpath);
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .photo5 img {
+    width: auto;
+    height: auto;
+  }
+}
+.mamservices .text5 {
+  grid-area: t5;
+  z-index: 2;
+  position: relative;
+  width: 85%;
+  text-align: center;
+  place-self: center;
+  margin: 35px 0;
+  padding: 10px;
+  background: #faefe3;
+  border: solid 1px #664825;
+  border-radius: 15px;
+}
+@media screen and (max-width: 700px) {
+  .mamservices .text5 {
+    width: 95%;
+    padding: 5px;
+  }
+}
+.mamservices .text5::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  background: url("../../images/logo.png") center/cover;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .text5::before {
+    width: 75px;
+    height: 75px;
+    top: -25px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .mamservices .text5::before {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+  }
+}
+.mamservices .text5 h2 {
+  text-align: center;
+  margin-bottom: 35px;
+  position: relative;
+}
+.mamservices .text5 h2::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 5px;
+  background-color: #ccb59b;
+  border-radius: 10px;
+  top: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .text5 h2 {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .mamservices .text5 h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+}
+.mamservices .text6 {
+  grid-area: t6;
+  z-index: 2;
+  position: relative;
+  width: 85%;
+  text-align: center;
+  place-self: center;
+  margin: 35px 0;
+  padding: 10px;
+  background: #faefe3;
+  border: solid 1px #664825;
+  border-radius: 15px;
+}
+@media screen and (max-width: 700px) {
+  .mamservices .text6 {
+    width: 95%;
+    padding: 5px;
+  }
+}
+.mamservices .text6::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  background: url("../../images/logo.png") center/cover;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .text6::before {
+    width: 75px;
+    height: 75px;
+    top: -25px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .mamservices .text6::before {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+  }
+}
+.mamservices .text6 h2 {
+  text-align: center;
+  margin-bottom: 35px;
+  position: relative;
+}
+.mamservices .text6 h2::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 5px;
+  background-color: #ccb59b;
+  border-radius: 10px;
+  top: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .text6 h2 {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .mamservices .text6 h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+}
+.mamservices .photo6 {
+  position: relative;
+  place-self: center;
+  grid-area: p6;
+  z-index: 1;
+}
+.mamservices .photo6 img {
+  position: relative;
+  display: block;
+  width: auto;
+  margin: auto;
+  height: auto;
+  max-height: 300px;
+  border-radius: 100%;
+  border: solid 1px #664825;
+  box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.29);
+  transition: 4s;
+  border-radius: var(--defaultpath);
+}
+@media screen and (max-width: 1000px) {
+  .mamservices .photo6 img {
+    width: auto;
+    height: auto;
+  }
+}/*# sourceMappingURL=index.css.map */
